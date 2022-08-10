@@ -1,4 +1,4 @@
-const funCreate=require("./Basic Commands/basic");
+const funCreate=require("./Basic_Commands/basic");
 // const { create } = require("domain");
 
 let inputArr=process.argv.slice(2);
