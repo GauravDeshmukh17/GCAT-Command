@@ -1,4 +1,4 @@
-const funCreate=require("./Basic_Commands/basic");
+const basic=require("./Basic_Commands/basic");
 // const { create } = require("domain");
 
 let inputArr=process.argv.slice(2);
@@ -13,9 +13,13 @@ for(let i=2;i<inputArr.length;i++){
 switch(command){
 
     case "-c":
-        funCreate.create(srcPathInput,filesArr);
+        basic.create(srcPathInput,filesArr);
         break;
     
+    case "-d":
+        basic.deleteFile(srcPathInput,filesArr);
+        break;  
+
     default:
         console.log("command not found");
 
