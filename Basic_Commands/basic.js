@@ -1,7 +1,7 @@
 const fs=require("fs");
 const path=require("path");
 
-function create(srcPath,filesArr){
+function createFile(srcPath,filesArr){
 
     for(let i=0;i<filesArr.length;i++){
 
@@ -22,6 +22,7 @@ function create(srcPath,filesArr){
 }
 
 
+
 function deleteFile(srcPath,filesArr){
 
     for(let i=0;i<filesArr.length;i++){
@@ -40,7 +41,27 @@ function deleteFile(srcPath,filesArr){
 
 
 
+function readFiles(srcPath,filesArr){
+
+    for(let i=0;i<filesArr.length;i++){
+
+        let joinPath=path.join(srcPath,filesArr[i]);
+        let doesExist=fs.existsSync(joinPath);
+        if(!doesExist){
+            console.log(filesArr[i]+" does not exist");
+            return;
+        }
+    }
+
+    // for(let i=0;i<filesArr.length;i++){
+
+
+    // }
+}
+
+
 module.exports={
-    create:create,
-    deleteFile:deleteFile
+    createFile:createFile,
+    deleteFile:deleteFile,
+    readFiles:readFiles
 }
