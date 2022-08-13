@@ -12,10 +12,11 @@ function createFile(srcPath,filesArr){
         let doesExist=fs.existsSync(joinPath);
 
         if(doesExist){
-            console.log(filesArr[i]+" alraedy exists");
+            console.log(filesArr[i]+" alraedy exist");
         }
         else{
             fs.appendFileSync(joinPath,"");
+            console.log(filesArr[i]+" created !!");
         }
     }
 
@@ -32,6 +33,7 @@ function deleteFile(srcPath,filesArr){
     
         if(doesExist){
             fs.unlinkSync(joinPath);
+            console.log(filesArr[i]+" deleted !!");
         }
         else{
             console.log(filesArr[i]+" does not exist");
@@ -41,7 +43,7 @@ function deleteFile(srcPath,filesArr){
 
 
 
-function readFiles(srcPath,filesArr){
+function readFiles(str,srcPath,filesArr){
 
     for(let i=0;i<filesArr.length;i++){
 
@@ -49,14 +51,17 @@ function readFiles(srcPath,filesArr){
         let doesExist=fs.existsSync(joinPath);
         if(!doesExist){
             console.log(filesArr[i]+" does not exist");
-            return;
         }
     }
 
-    // for(let i=0;i<filesArr.length;i++){
+    for(let i=0;i<filesArr.length;i++){
 
-
-    // }
+        let joinPath=path.join(srcPath,filesArr[i]);
+        let doesExist=fs.existsSync(joinPath);
+        if(doesExist){
+            console.log(str+fs.readFileSync(filesArr[i],"utf-8"));
+        }
+    }
 }
 
 

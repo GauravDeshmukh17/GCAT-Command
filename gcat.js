@@ -45,9 +45,15 @@ switch(command){
         break;  
 
     case "--read":
-        basic.readFiles(srcPathInput,filesArr);
+        var str="";
+        basic.readFiles(str,srcPathInput,filesArr);
         break;
 
+    case "--read$":
+        str="$";
+        basic.readFiles(str,srcPathInput,filesArr);
+        break;
+        
     default:
         console.log("command not found");
 
