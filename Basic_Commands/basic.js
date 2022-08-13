@@ -59,7 +59,7 @@ function readFiles(str,srcPath,filesArr){
         let joinPath=path.join(srcPath,filesArr[i]);
         let doesExist=fs.existsSync(joinPath);
         if(doesExist){
-            console.log(str+fs.readFileSync(filesArr[i],"utf-8"));
+            console.log(str+fs.readFileSync(joinPath,"utf-8"));
         }
     }
 }
