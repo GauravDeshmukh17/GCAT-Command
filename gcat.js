@@ -2,7 +2,14 @@ const basic=require("./Basic_Commands/basic");
 // const { create } = require("domain");
 
 let inputArr=process.argv.slice(2);
-let srcPathInput=inputArr[0];
+let srcPathInput;
+if(inputArr[0]=="--cdp"){
+    srcPathInput=process.cwd();
+}
+else{
+    srcPathInput=inputArr[0];
+}
+
 let command=inputArr[1];
 
 let filesArr=[];
