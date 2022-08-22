@@ -1,4 +1,5 @@
 const basic=require("./Basic_Commands/basic");
+const wf=require("./Basic_Commands/write");
 // const { create } = require("domain");
 
 let inputArr=process.argv.slice(2);
@@ -54,8 +55,16 @@ switch(command){
         basic.readFiles(str,srcPathInput,filesArr);
         break;
         
+    case "-w":
+        wf.writeFile(srcPathInput,inputArr);
+        break;
+        
     default:
         console.log("command not found");
 
 }
+
+
+
+
 
